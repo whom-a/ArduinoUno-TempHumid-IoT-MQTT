@@ -6,7 +6,7 @@ import paho.mqtt.subscribe as subscribe
 from paho import mqtt
 app = Flask(__name__)
 temprature = 0.0
-humidity = 0.0
+humidity = 1.0
 #with open('lastData.txt', 'r') as file:
 #    global temprature
 #    global humidity
