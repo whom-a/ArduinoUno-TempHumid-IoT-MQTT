@@ -7,6 +7,13 @@ from paho import mqtt
 app = Flask(__name__)
 temprature = 0.0
 humidity = 0.0
+#with open('lastData.txt', 'r') as file:
+#    global temprature
+#    global humidity
+#    global lastupdate
+#    temprature = file.readline()
+#    humidity = file.readline()
+#    lastupdate = file.readline()
 ran = 0
 lastupdate = "never"
 def turnin(humidity, temprature, lastupdate):
@@ -33,8 +40,8 @@ def system_info():
     client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
     client.username_pw_set("Reader", "ReadRead1")
     client.on_message = on_message
-    client.connect("ea9819cacd5c4bf6a8c8c56167d3affe.s1.eu.hivemq.cloud", 8883)
-    time.sleep(0.25)
+    client.connect("a7d10c4461e8473085b6d75573b34784.s1.eu.hivemq.cloud", 8883)
+    time.sleep(0.5)
     client.subscribe("#", qos=0)
     client.loop_start()
     hlep = 0
