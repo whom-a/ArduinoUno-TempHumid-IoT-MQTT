@@ -7,13 +7,6 @@ from paho import mqtt
 app = Flask(__name__)
 temprature = 0.0
 humidity = 1.0
-#with open('lastData.txt', 'r') as file:
-#    global temprature
-#    global humidity
-#    global lastupdate
-#    temprature = file.readline()
-#    humidity = file.readline()
-#    lastupdate = file.readline()
 ran = 0
 lastupdate = "never"
 def turnin(humidity, temprature, lastupdate):
@@ -58,5 +51,5 @@ def system_info():
     
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8080)
     
